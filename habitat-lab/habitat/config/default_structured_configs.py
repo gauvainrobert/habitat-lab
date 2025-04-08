@@ -1487,6 +1487,7 @@ class SimulatorSensorConfig(HabitatBaseConfig):
 @dataclass
 class SimulatorCameraSensorConfig(SimulatorSensorConfig):
     hfov: int = 90  # horizontal field of view in degrees
+    vfov: int = 90
     sensor_subtype: str = "PINHOLE"
     noise_model: str = "None"
     noise_model_kwargs: Dict[str, Any] = field(default_factory=dict)
