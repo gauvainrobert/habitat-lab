@@ -100,7 +100,7 @@ def overwrite_config(
 class HabitatSimSensor:
     sim_sensor_type: habitat_sim.SensorType
     _get_default_spec = Callable[..., habitat_sim.sensor.SensorSpec]
-    _config_ignore_keys = {"height", "type", "width"}
+    _config_ignore_keys = {"height", "type", "width", "vfov"}
 
 
 @registry.register_sensor
