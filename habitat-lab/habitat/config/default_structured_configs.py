@@ -1576,6 +1576,18 @@ class HeadRGBSensorConfig(HabitatSimRGBSensorConfig):
     width: int = 256
     height: int = 256
 
+@dataclass
+class FrontRGBSensorConfig(HabitatSimRGBSensorConfig):
+    uuid: str = "front_rgb"
+    width: int = 256
+    height: int = 256
+
+@dataclass
+class BackRGBSensorConfig(HabitatSimRGBSensorConfig):
+    uuid: str = "back_rgb"
+    width: int = 256
+    height: int = 256
+
 
 @dataclass
 class HeadDepthSensorConfig(HabitatSimDepthSensorConfig):
@@ -2017,6 +2029,9 @@ cs.store(
     node=HabitatSimRGBSensorConfig,
 )
 
+
+
+
 cs.store(
     group="habitat/simulator/sim_sensors",
     name="depth_sensor",
@@ -2095,6 +2110,19 @@ cs.store(
     group="habitat/simulator/sim_sensors",
     name="head_rgb_sensor",
     node=HeadRGBSensorConfig,
+)
+
+
+cs.store(
+    group="habitat/simulator/sim_sensors",
+    name="front_rgb_sensor",
+    node=FrontRGBSensorConfig,
+)
+
+cs.store(
+    group="habitat/simulator/sim_sensors",
+    name="back_rgb_sensor",
+    node=BackRGBSensorConfig,
 )
 
 cs.store(
